@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MediumSurveySubmission, Rank } from '../model/model';
+import { MediumSurveySubmission } from '../model/model';
 
 @Component({
   selector: 'app-medium-survey',
