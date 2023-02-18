@@ -5,7 +5,6 @@ import { ShortSurveySubmission } from '../model/model';
 @Component({
   selector: 'app-short-survey',
   templateUrl: './short-survey.component.html',
-  styleUrls: ['./short-survey.component.css']
 })
 export class ShortSurveyComponent {
 

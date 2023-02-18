@@ -5,7 +5,6 @@ import { LongSurveySubmission, Rank } from '../model/model';
 @Component({
   selector: 'app-long-survey',
   templateUrl: './long-survey.component.html',
-  styleUrls: ['./long-survey.component.css']
 })
 export class LongSurveyComponent {
 

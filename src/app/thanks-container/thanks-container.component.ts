@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-thanks-container',
-  templateUrl: './thanks-container.component.html',
-  styleUrls: ['./thanks-container.component.css']
+  template: `
+  <main>
+  <h1>Thank you! You may close this page</h1>
+  </main>`,
 })
 export class ThanksContainerComponent {
 

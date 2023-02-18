@@ -5,7 +5,6 @@ import { MediumSurveySubmission, Rank } from '../model/model';
 @Component({
   selector: 'app-medium-survey',
   templateUrl: './medium-survey.component.html',
-  styleUrls: ['./medium-survey.component.css']
 })
 export class MediumSurveyComponent {
 
