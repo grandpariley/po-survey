@@ -9,7 +9,7 @@ import { SurveyService } from '../survey.service';
   template: `
   <div class="grid grid-cols-1">
     <h1>Riley Herman's ESG Survey Extravaganza</h1>
-    <main>
+    <main class="grid grid-cols-1">
         <app-short-survey *ngIf="state.value === 'SHORT'" (submit)="onShortSurveySubmit($event)"></app-short-survey>
         <app-medium-survey *ngIf="state.value === 'MEDIUM'" (submit)="onMediumSurveySubmit($event)"></app-medium-survey>
         <app-long-survey *ngIf="state.value === 'LONG'" (submit)="onLongSurveySubmit($event)"></app-long-survey>
