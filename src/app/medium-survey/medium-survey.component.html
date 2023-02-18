@@ -1,0 +1,40 @@
+<div>
+    <form formGroupName="formGroup" (ngSubmit)="onSubmit()">
+        <label for="q2">How would you express your sustainability motivations and preferences in your owns
+            words?</label>
+        <textarea id="q2" name="q2" formControlName="q2"></textarea>
+        <label for="q3">What do you want to achieve? (Please select one or several sustainability goals. If you have
+            several sustainability goals, please rank them from 1 to 3, 1 being the most important)</label>
+        <app-rank name="q3" id="q3" formControlName="q3" [options]="q3Options"></app-rank>
+        <label>In which type of economic activity would you be willing to invest your money? The investment can focus on
+            one type of economic activity or a mix of them.</label>
+        <label>
+            a) Economic activities that contribute substantially to the following environmental objectives:
+            - Climate change mitigation
+            - Climate change adaptation
+            - Sustainable use and protection of water and marine resources
+            - Transition to a circular economy
+            - Pollution prevention and control
+            - Protection and restoration of biodiversity and ecosystems
+            It should represent <input type="number" name="q4a" formControlName="q4a" /> % of the product
+        </label>
+        <label>
+            Economic activities that contribute to environmental objectives (such as efficient use of energy, renewable
+            energy, raw materials, water...) or social objectives (such as tackling inequality or fostering social
+            cohesion, social integration and labour relations...).
+            It should represent <input type="number" name="q4b" formControlName="q4b" /> % of the product
+        </label>
+        <label for="q4c">c) Economic activities that do not aim at contributing to any environmental or social objective
+            but only consider negative effects on environmental, social and employee matters, respect for human rights,
+            anti-corruption, and anti-bribery matters. Indicators on negative effect considered should be linked to the
+            following topics (If you select several answers, please provide a ranking, 1 being the most
+            important)</label>
+        <app-rank name="q4c" id="q4c" formControlName="q4c" [options]="q4cOptions"></app-rank>
+        <label>Do you want to provide more detail regarding your values and priorities?</label>
+        <input type="radio" formControlName="q5" id="q5a" name="q5" value="A">
+        <label for="q5a">a) Yes</label>
+        <input type="radio" formControlName="q5" id="q5b" name="q5" value="B">
+        <label for="q5b">b) No</label>
+        <button type="submit">Submit</button>
+    </form>
+</div>

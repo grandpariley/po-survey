@@ -1,0 +1,12 @@
+<form formGroupName="formGroup" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Do you have sustainability preferences for your investment?</label>
+        <input type="radio" formControlName="q1" id="q1a" name="q1" value="A">
+        <label for="q1a">a) Yes</label>
+        <input type="radio" formControlName="q1" id="q1b" name="q1" value="B">
+        <label for="q1b">b) Don't know, need to hear more about it</label>
+        <input type="radio" formControlName="q1" id="q1c" name="q1" value="C">
+        <label for="q1c">c) No, only care about financial aspects of the investment</label>
+    </div>
+    <button type="submit">Submit</button>
+</form>
