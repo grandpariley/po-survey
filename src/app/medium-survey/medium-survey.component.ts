@@ -29,10 +29,10 @@ export class MediumSurveyComponent {
 
   formGroup = new FormGroup({
     q2: new FormControl<string | null>(null),
-    q3: new FormArray<FormControl<number | null>>(Array(this.q3Options.length).fill(new FormControl(null))),
+    q3: new FormArray<FormControl<number | null>>(this.q3Options.map(_ => new FormControl(null))),
     q4a: new FormControl<number | null>(null, Validators.required),
     q4b: new FormControl<number | null>(null, Validators.required),
-    q4c: new FormArray<FormControl<number | null>>(Array(this.q4cOptions.length).fill(new FormControl(null))),
+    q4c: new FormArray<FormControl<number | null>>(this.q4cOptions.map(_ => new FormControl(null))),
     q5: new FormControl<'A' | 'B' | null>(null, Validators.required),
   });
 
@@ -42,15 +42,6 @@ export class MediumSurveyComponent {
 
   get q4cForm(): FormArray<FormControl<number | null>> {
     return this.formGroup.get('q4c') as FormArray<FormControl<number | null>>;
-  }
-
-  ngOnInit() {
-    this.q3Form.valueChanges.subscribe(v => {
-      console.log(this.q3Form.value)
-    })
-    this.q4cForm.valueChanges.subscribe(v => {
-      console.log(this.q4cForm.value)
-    })
   }
 
   onSubmit(): void {
