@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MediumSurveySubmission, Rank } from '../model/model';
 
 @Component({
@@ -29,12 +29,29 @@ export class MediumSurveyComponent {
 
   formGroup = new FormGroup({
     q2: new FormControl<string | null>(null),
-    q3: new FormControl<Rank | null>(null),
+    q3: new FormArray<FormControl<number | null>>(Array(this.q3Options.length).fill(new FormControl(null))),
     q4a: new FormControl<number | null>(null, Validators.required),
     q4b: new FormControl<number | null>(null, Validators.required),
-    q4c: new FormControl<Rank | null>(null, Validators.required),
+    q4c: new FormArray<FormControl<number | null>>(Array(this.q4cOptions.length).fill(new FormControl(null))),
     q5: new FormControl<'A' | 'B' | null>(null, Validators.required),
   });
+
+  get q3Form(): FormArray<FormControl<number | null>> {
+    return this.formGroup.get('q3') as FormArray<FormControl<number | null>>;
+  }
+
+  get q4cForm(): FormArray<FormControl<number | null>> {
+    return this.formGroup.get('q4c') as FormArray<FormControl<number | null>>;
+  }
+
+  ngOnInit() {
+    this.q3Form.valueChanges.subscribe(v => {
+      console.log(this.q3Form.value)
+    })
+    this.q4cForm.valueChanges.subscribe(v => {
+      console.log(this.q4cForm.value)
+    })
+  }
 
   onSubmit(): void {
     this.submit.emit({

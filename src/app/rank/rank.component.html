@@ -1,10 +1,8 @@
-<form [formGroup]="formGroup" class="grid grid-cols-1">
-    <ng-container formArrayName="formArray">
-        <ng-container *ngFor="let option of formArray.controls; let i = index">
-            <div>
-                <input class="w-12 mr-2" type="number" [name]="'input-' + i" [id]="'input-' + i" [formControl]="option">
-                <label [for]="'input-' + i">{{options[i]}}</label>
-            </div>
-        </ng-container>
+<div class="grid grid-cols-1">
+    <ng-container *ngFor="let option of form.controls; let i = index">
+        <div>
+            <input class="w-16 mr-2" type="number" [name]="'input-' + i" [id]="'input-' + i" [formControl]="option">
+            <label [for]="'input-' + i">{{options[i]}}</label>
+        </div>
     </ng-container>
-</form>
+</div>

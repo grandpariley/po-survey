@@ -20,16 +20,19 @@ export class SurveyService {
       'COMPLETE' :
       'MEDIUM';
   }
+  
   completeMediumSurvey(mediumSurveySubmission: MediumSurveySubmission): SurveyState {
     this.state.medium = mediumSurveySubmission;
     return mediumSurveyComplete(mediumSurveySubmission) ?
       'COMPLETE' :
       'LONG';
   }
+
   completeLongSurvey(longSurveySubmission: LongSurveySubmission): SurveyState {
     this.state.long = longSurveySubmission;
     return 'COMPLETE';
   }
+
   complete(): void {
     console.log(this.state);
   }

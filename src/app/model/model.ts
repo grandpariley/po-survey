@@ -26,4 +26,4 @@ export interface LongSurveySubmission {
     q9: string | null | undefined;
 }
 
-export type Rank = number[];
+export type Rank = (number | null)[];

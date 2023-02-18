@@ -24,6 +24,7 @@ export class SurveyContainerComponent implements OnInit {
   ngOnInit(): void {
     this.state.valueChanges.subscribe(s => {
       if (s === 'COMPLETE') {
+        this.surveyService.complete();
         this.router.navigate(['thanks']);
       }
     });
