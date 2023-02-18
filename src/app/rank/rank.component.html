@@ -1,1 +1,8 @@
-<p>rank works!</p>
+<form formGroupName="formGroup">
+    <ng-container formArrayName="formArray">
+        <ng-container *ngFor="let option of formArray.controls; let i = index">
+            <label [for]="'input-' + i">{{options[i]}}</label>
+            <input type="number" [name]="'input-' + i" [id]="'input-' + i" [formControl]="option">
+        </ng-container>
+    </ng-container>
+</form>

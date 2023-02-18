@@ -67,10 +67,10 @@ export class LongSurveyComponent {
   ];
 
   formGroup = new FormGroup({
-    q6: new FormControl<Rank | null>(null, Validators.required),
-    q7: new FormControl<Rank | null>(null, Validators.required),
-    q8: new FormControl<Rank | null>(null, Validators.required),
-    q9: new FormControl<string | null>(null, Validators.required),
+    q6: new FormControl<Rank | null>(null),
+    q7: new FormControl<Rank | null>(null),
+    q8: new FormControl<Rank | null>(null),
+    q9: new FormControl<string | null>(null),
   });
 
   onSubmit(): void {
