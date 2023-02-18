@@ -1,5 +1,5 @@
 <div>
-    <form formGroupName="formGroup" (ngSubmit)="onSubmit()">
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
         <label for="q2">How would you express your sustainability motivations and preferences in your owns
             words?</label>
         <textarea id="q2" name="q2" formControlName="q2"></textarea>

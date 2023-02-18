@@ -1,4 +1,4 @@
-<form formGroupName="formGroup" (ngSubmit)="onSubmit()">
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <div>
         <label>Do you have sustainability preferences for your investment?</label>
         <input type="radio" formControlName="q1" id="q1a" name="q1" value="A">

@@ -36,10 +36,12 @@ export class RankComponent implements ControlValueAccessor, OnInit {
     return this.formArray.value;
   }
 
-  writeValue(obj: (number | null)[]): void {
+  writeValue(obj: (number | null)[] | null): void {
     this.onChange(obj);
     this.onTouched(obj);
-    this.formArray.setValue(obj);
+    if (obj) {
+      this.formArray.setValue(obj);
+    }
   }
 
   registerOnChange(fn: (obj: any) => {}): void {

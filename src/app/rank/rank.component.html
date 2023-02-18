@@ -1,4 +1,4 @@
-<form formGroupName="formGroup">
+<form [formGroup]="formGroup">
     <ng-container formArrayName="formArray">
         <ng-container *ngFor="let option of formArray.controls; let i = index">
             <label [for]="'input-' + i">{{options[i]}}</label>
