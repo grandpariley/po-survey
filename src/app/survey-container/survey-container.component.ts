@@ -7,7 +7,7 @@ import { SurveyService } from '../survey.service';
 @Component({
   selector: 'app-survey-container',
   template: `
-  <div class="grid grid-cols-1 px-4">
+  <div class="grid grid-cols-1 px-6">
     <h1>Riley Herman's ESG Survey Extravaganza</h1>
     <main class="grid grid-cols-1">
         <app-short-survey *ngIf="state.value === 'SHORT'" (submit)="onShortSurveySubmit($event)"></app-short-survey>
