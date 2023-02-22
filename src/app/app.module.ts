@@ -10,6 +10,7 @@ import { MediumSurveyComponent } from './medium-survey/medium-survey.component';
 import { LongSurveyComponent } from './long-survey/long-survey.component';
 import { RankComponent } from './rank/rank.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ShortSurveyComponent,
     MediumSurveyComponent,
     LongSurveyComponent,
-    RankComponent
+    RankComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

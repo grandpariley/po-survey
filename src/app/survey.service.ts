@@ -16,14 +16,20 @@ export class SurveyService {
 
   completeShortSurvey(shortSurveySubmission: ShortSurveySubmission): SurveyState {
     this.state.short = shortSurveySubmission;
-    return shortSurveyComplete(shortSurveySubmission) ?
-      'COMPLETE' :
-      'MEDIUM';
+    switch (shortSurveySubmission.q1) {
+      case 'A':
+        return 'MEDIUM';
+      case 'B':
+        return 'INFO';
+      case 'C':
+        return 'COMPLETE';
+    }
+    return null;
   }
   
   completeMediumSurvey(mediumSurveySubmission: MediumSurveySubmission): SurveyState {
     this.state.medium = mediumSurveySubmission;
-    return mediumSurveyComplete(mediumSurveySubmission) ?
+    return mediumSurveySubmission.q5 === 'B' ?
       'COMPLETE' :
       'LONG';
   }
@@ -36,12 +42,5 @@ export class SurveyService {
   complete(): void {
     console.log(this.state);
   }
-}
-
-function shortSurveyComplete(shortSurveySubmission: ShortSurveySubmission): boolean {
-  return shortSurveySubmission.q1 === 'C'
-}
-function mediumSurveyComplete(mediumSurveySubmission: MediumSurveySubmission): boolean {
-  return mediumSurveySubmission.q5 === 'B';
 }
 

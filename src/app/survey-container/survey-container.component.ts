@@ -10,7 +10,8 @@ import { SurveyService } from '../survey.service';
   <div class="grid grid-cols-1 px-6">
     <h1>Riley Herman's ESG Survey Extravaganza</h1>
     <main class="grid grid-cols-1">
-        <app-short-survey *ngIf="state.value === 'SHORT'" (submit)="onShortSurveySubmit($event)"></app-short-survey>
+        <app-info *ngIf="state.value === 'INFO'" (back)="onInfoBack($event)"></app-info>
+        <app-short-survey *ngIf="state.value === 'SHORT'" (submit)="onShortSurveySubmit($event)" [disabledInputs]="[]"></app-short-survey>
         <app-medium-survey *ngIf="state.value === 'MEDIUM'" (submit)="onMediumSurveySubmit($event)"></app-medium-survey>
         <app-long-survey *ngIf="state.value === 'LONG'" (submit)="onLongSurveySubmit($event)"></app-long-survey>
     </main>
@@ -28,6 +29,10 @@ export class SurveyContainerComponent implements OnInit {
         this.router.navigate(['thanks']);
       }
     });
+  }
+
+  onInfoBack($event: ShortSurveySubmission) {
+    this.state.setValue(this.surveyService.completeShortSurvey($event));
   }
 
   onShortSurveySubmit($event: ShortSurveySubmission): void {

@@ -1,4 +1,4 @@
-export type SurveyState = 'SHORT' | 'MEDIUM' | 'LONG' | 'COMPLETE' | null;
+export type SurveyState = 'INFO' | 'SHORT' | 'MEDIUM' | 'LONG' | 'COMPLETE' | null;
 
 export interface SurveySubmission {
     short: ShortSurveySubmission | null;
