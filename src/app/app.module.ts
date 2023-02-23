@@ -10,6 +10,7 @@ import { MediumSurveyComponent } from './medium-survey/medium-survey.component';
 import { LongSurveyComponent } from './long-survey/long-survey.component';
 import { RankComponent } from './rank/rank.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { InfoComponent } from './info/info.component';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { InfoComponent } from './info/info.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],

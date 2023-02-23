@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LongSurveySubmission, MediumSurveySubmission, ShortSurveySubmission, SurveyState, SurveySubmission } from './model/model';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ export class SurveyService {
     long: null,
   };
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   completeShortSurvey(shortSurveySubmission: ShortSurveySubmission): SurveyState {
     this.state.short = shortSurveySubmission;
@@ -40,7 +42,14 @@ export class SurveyService {
   }
 
   complete(): void {
-    console.log(this.state);
+    this.http.post(environment.uri, this.state, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${environment.bearer}`
+      }
+    }).subscribe({
+      error: err => console.error(err)
+    });
   }
 }
 
