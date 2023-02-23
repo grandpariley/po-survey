@@ -42,13 +42,14 @@ export class SurveyService {
   }
 
   complete(): void {
+    console.log(environment.uri, this.state)
     this.http.post(environment.uri, this.state, {
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${environment.bearer}`
+        'Content-Type': 'application/json'
       }
     }).subscribe({
-      error: err => console.error(err)
+      next: (res) => console.log("successfully submitted survey", res),
+      error: (err) => console.error(err)
     });
   }
 }

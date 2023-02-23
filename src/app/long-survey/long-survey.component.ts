@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LongSurveySubmission, Rank } from '../model/model';
 
 @Component({
@@ -65,6 +65,20 @@ export class LongSurveyComponent {
     'Wars',
     'Non-ratification of Paris-Agreement',
   ];
+
+
+  get q6Form(): FormArray<FormControl<number | null>> {
+    return this.formGroup.get('q6') as FormArray<FormControl<number | null>>;
+  }
+
+
+  get q7Form(): FormArray<FormControl<number | null>> {
+    return this.formGroup.get('q7') as FormArray<FormControl<number | null>>;
+  }
+
+  get q8Form(): FormArray<FormControl<number | null>> {
+    return this.formGroup.get('q8') as FormArray<FormControl<number | null>>;
+  }
 
   formGroup = new FormGroup({
     q6: new FormControl<Rank | null>(null),
