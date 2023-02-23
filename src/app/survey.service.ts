@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LongSurveySubmission, MediumSurveySubmission, ShortSurveySubmission, SurveyState, SurveySubmission } from './model/model';
-import { environment } from '../environments/environment';
+
+const URI = 'https://faas-tor1-70ca848e.doserverless.co/api/v1/web/fn-e3f092c8-27f3-46b5-a58f-c77e29833d10/cloud/posurvey';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,7 @@ export class SurveyService {
     }
     return null;
   }
-  
+
   completeMediumSurvey(mediumSurveySubmission: MediumSurveySubmission): SurveyState {
     this.state.medium = mediumSurveySubmission;
     return mediumSurveySubmission.q5 === 'B' ?
@@ -42,8 +43,8 @@ export class SurveyService {
   }
 
   complete(): void {
-    console.log(environment.uri, this.state)
-    this.http.post(environment.uri, this.state, {
+    console.log("why is this not changing", URI, this.state)
+    this.http.post(URI, this.state, {
       headers: {
         'Content-Type': 'application/json'
       }
