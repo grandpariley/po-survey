@@ -1,7 +1,7 @@
 <div class="grid grid-cols-1">
     <ng-container *ngFor="let option of form.controls; let i = index">
         <div>
-            <input class="w-16 mr-2" type="number" [name]="'input-' + i" [id]="'input-' + i" [formControl]="option">
+            <input class="w-24 border-2 border-slate-700 rounded p-1 mr-2 my-1" type="number" [name]="'input-' + i" [id]="'input-' + i" [formControl]="option">
             <label [for]="'input-' + i">{{options[i]}}</label>
         </div>
     </ng-container>

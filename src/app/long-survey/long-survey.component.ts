@@ -81,9 +81,9 @@ export class LongSurveyComponent {
   }
 
   formGroup = new FormGroup({
-    q6: new FormControl<Rank | null>(null),
-    q7: new FormControl<Rank | null>(null),
-    q8: new FormControl<Rank | null>(null),
+    q6: new FormArray<FormControl<number | null>>(this.q6Options.map(_ => new FormControl(null))),
+    q7: new FormArray<FormControl<number | null>>(this.q7Options.map(_ => new FormControl(null))),
+    q8: new FormArray<FormControl<number | null>>(this.q8Options.map(_ => new FormControl(null))),
     q9: new FormControl<string | null>(null),
   });
 

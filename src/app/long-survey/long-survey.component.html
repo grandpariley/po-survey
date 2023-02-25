@@ -1,16 +1,25 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <label for="q6">Which of the Sustainable Development Goals below do you want to advance with your investments?
         (If you select several answers, please provide a ranking, 1 being the most important)</label>
-    <app-rank name="q6" id="q6" [form]="q6Form" [options]="q6Options"></app-rank>
+    <div class="mb-4">
+        <app-rank name="q6" id="q6" [form]="q6Form" [options]="q6Options"></app-rank>
+    </div>
     <label for="q7">Do you refuse to be financially exposed to the following economic activities? (If you select
         several answers, please provide a ranking, 1 being the most important exclusion)</label>
-    <app-rank name="q7" id="q7" [form]="q7Form" [options]="q7Options"></app-rank>
+    <div class="mb-4">
+        <app-rank name="q7" id="q7" [form]="q7Form" [options]="q7Options"></app-rank>
+    </div>
     <label for="q8">Do you refuse to be financially exposed to economic activities in countries with following
         controversies? (If you select several answers, please provide a ranking, 1 being the most important
         exclusion)</label>
-    <app-rank name="q8" id="q8" [form]="q8Form" [options]="q8Options"></app-rank>
+    <div class="mb-4">
+        <app-rank name="q8" id="q8" [form]="q8Form" [options]="q8Options"></app-rank>
+    </div>
     <label for="q9">Are there any additional values and priorities you would like to express?</label>
-    <textarea class="w-full" id="q9" name="q9" formControlName="q9"></textarea><br>
-    <button class="my-3 border-2 border-slate-700 rounded p-3 disabled:opacity-50" [disabled]="!formGroup.valid"
-        type="submit">Submit</button>
+    <textarea class="w-full border-2 border-slate-700 rounded p-1" id="q9" name="q9"
+        formControlName="q9"></textarea><br>
+    <div>
+        <button class="my-4 border-2 border-slate-700 rounded p-3 disabled:opacity-50" [disabled]="!formGroup.valid"
+            type="submit">Submit</button>
+    </div>
 </form>
