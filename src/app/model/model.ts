@@ -1,13 +1,27 @@
-export type SurveyState = 'INFO' | 'SHORT' | 'MEDIUM' | 'LONG' | 'COMPLETE' | null;
+export type SurveyState = 'INFO' | 'RISK' | 'SHORT' | 'MEDIUM' | 'LONG' | 'COMPLETE' | null;
 
 export interface SurveySubmission {
+    risk: RiskSurveySubmission | null;
     short: ShortSurveySubmission | null;
     medium: MediumSurveySubmission | null;
     long: LongSurveySubmission | null;
 }
 
+export interface RiskSurveySubmission {
+    r1: MultipleChoice | null | undefined;
+    r2: MultipleChoice| null | undefined;
+    r3: MultipleChoice | null | undefined;
+    r4: MultipleChoice | null | undefined;
+    r5: MultipleChoice| null | undefined;
+    r6: MultipleChoice | null | undefined;
+    r7: MultipleChoice| null | undefined;
+    r8: MultipleChoice | null | undefined;
+    r9: MultipleChoice | null | undefined;
+    r10: MultipleChoice | null | undefined;
+}
+
 export interface ShortSurveySubmission {
-    q1: 'A' | 'B' | 'C' | null | undefined;
+    q1: MultipleChoice | null | undefined;
 }
 
 export interface MediumSurveySubmission {
@@ -16,7 +30,7 @@ export interface MediumSurveySubmission {
     q4a: number | null | undefined;
     q4b: number | null | undefined;
     q4c: Rank | null | undefined;
-    q5: 'A' | 'B' | null | undefined;
+    q5: MultipleChoice | null | undefined;
 }
 
 export interface LongSurveySubmission {
@@ -27,3 +41,4 @@ export interface LongSurveySubmission {
 }
 
 export type Rank = (number | null)[];
+export type MultipleChoice = 'A' | 'B' | 'C' | 'D' | 'E';

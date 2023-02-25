@@ -12,6 +12,7 @@ import { RankComponent } from './rank/rank.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { InfoComponent } from './info/info.component';
+import { RiskSurveyComponent } from './risk-survey/risk-survey.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InfoComponent } from './info/info.component';
     MediumSurveyComponent,
     LongSurveyComponent,
     RankComponent,
-    InfoComponent
+    InfoComponent,
+    RiskSurveyComponent
   ],
   imports: [
     BrowserModule,

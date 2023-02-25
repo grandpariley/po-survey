@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ShortSurveySubmission } from '../model/model';
+import { MultipleChoice, ShortSurveySubmission } from '../model/model';
 
 @Component({
   selector: 'app-short-survey',
@@ -10,7 +10,7 @@ export class ShortSurveyComponent {
   
   @Output() submit: EventEmitter<ShortSurveySubmission> = new EventEmitter<ShortSurveySubmission>();
   formGroup = new FormGroup({
-    q1: new FormControl<'A' | 'B' | 'C' | undefined | null>(null, Validators.required),
+    q1: new FormControl<MultipleChoice | undefined | null>(null, Validators.required),
   });
 
   @Input() disabledInputs: string[] = []
