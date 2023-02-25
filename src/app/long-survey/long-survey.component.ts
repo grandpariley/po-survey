@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LongSurveySubmission, Rank } from '../model/model';
+import { validateRank } from '../rank/rank.validator';
 
 @Component({
   selector: 'app-long-survey',
@@ -81,9 +82,9 @@ export class LongSurveyComponent {
   }
 
   formGroup = new FormGroup({
-    q6: new FormArray<FormControl<number | null>>(this.q6Options.map(_ => new FormControl(null))),
-    q7: new FormArray<FormControl<number | null>>(this.q7Options.map(_ => new FormControl(null))),
-    q8: new FormArray<FormControl<number | null>>(this.q8Options.map(_ => new FormControl(null))),
+    q6: new FormArray<FormControl<number | null>>(this.q6Options.map(_ => new FormControl(null)), validateRank),
+    q7: new FormArray<FormControl<number | null>>(this.q7Options.map(_ => new FormControl(null)), validateRank),
+    q8: new FormArray<FormControl<number | null>>(this.q8Options.map(_ => new FormControl(null)), validateRank),
     q9: new FormControl<string | null>(null),
   });
 
