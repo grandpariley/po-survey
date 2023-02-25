@@ -31,6 +31,7 @@ export class LongSurveyComponent {
     'Peace, justice and strong institutions',
     'All environment, social & governance matters',
   ];
+
   q7Options = [
     'Environment exclusions',
     'Pesticides and biocides',
@@ -56,6 +57,7 @@ export class LongSurveyComponent {
     'Violation of International Labour Organisation rules',
     'Don\'t refuse financing any sector',
   ];
+
   q8Options = [
     'Nuclear weapons',
     'Non-proliferation treaty of nuclear weapons',
@@ -66,11 +68,9 @@ export class LongSurveyComponent {
     'Non-ratification of Paris-Agreement',
   ];
 
-
   get q6Form(): FormArray<FormControl<number | null>> {
     return this.formGroup.get('q6') as FormArray<FormControl<number | null>>;
   }
-
 
   get q7Form(): FormArray<FormControl<number | null>> {
     return this.formGroup.get('q7') as FormArray<FormControl<number | null>>;
