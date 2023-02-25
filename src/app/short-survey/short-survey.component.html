@@ -12,5 +12,5 @@
         <input class="mr-2" type="radio" formControlName="q1" id="q1c" name="q1" value="C">
         <label for="q1c">c) No, only care about financial aspects of the investment</label>
     </div>
-    <button type="submit">Submit</button>
+    <button class="my-3 border-2 border-slate-700 rounded p-3 disabled:opacity-50" [disabled]="!formGroup.valid" type="submit">Next</button>
 </form>

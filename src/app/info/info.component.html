@@ -1,5 +1,5 @@
 <main>
-    <h3>Short Assessment</h3>
+    <h3 class="font-lg my-2"><strong>Short Assessment</strong></h3>
     <p>
         Having provided the explanation of sustainability preferences in Step 1: Explanation of sustainability
         preferences, the Short Assessment is required for all clients and is designed to identify those who have
@@ -9,32 +9,33 @@
         sustainability or a need for further information, then I should provide further explanation during the
         Medium Assessment.
     </p>
-    <h3>Medium Assessment</h3>
+    <h3 class="font-lg my-2"><strong>Medium Assessment</strong></h3>
     <p>
         As you have expressed an interest in sustainability or a need for further information, I can now provide
         an overview of the different sustainability goals observed among investors and further detail in relation
         to sustainability preferences if needed. This information should help you form and opinion and express
         your sustainability goals and preferences.
     </p>
-    <p>
-        <strong>Main sustainability goals</strong>
-    </p>
+    <h3 class="font-lg my-2"><strong>Main sustainability goals</strong></h3>
     <p>
         Investors deciding to incorporate ESG criteria in their investment usually pursue three main goals (in
         addition to the initial objective of achieving a financial return). It should be underlined that some
         investors can have several goals for their investment.2
     </p>
     <p>
-        <strong>Impact:</strong> You may want to have a positive impact on society and the environment through your
+        <span class="font-semibold">Impact:</span> You may want to have a positive impact on society and the environment
+        through your
         investments.
     </p>
     <p>
-        <strong>Value alignment:</strong> You may want to align your investments with your personal values - either by
+        <span class="font-semibold">Value alignment:</span> You may want to align your investments with your personal
+        values - either by
         prioritising financing specific economic activities or by avoiding financing specific economic
         activities.
     </p>
     <p>
-        <strong>Financial performance through ESG:</strong> You may want to invest in a manner which takes account
+        <span class="font-semibold">Financial performance through ESG:</span> You may want to invest in a manner which
+        takes account
         of sustainability factors because you believe it will improve the risk/return profile of the
         investment.
     </p>
@@ -42,9 +43,8 @@
         <img src="/assets/infographic-1.png"
             alt="Sustainability goals of retail clients in purchasing financial products taking into account environmental criteria" />
     </p>
-    <p>
-        <strong>Specific explanation to be provided to all clients who have an interest in impact</strong>
-    </p>
+    <h3 class="font-lg my-2"><strong>Specific explanation to be provided to all clients who have an interest in
+            impact</strong></h3>
     <p>
         Investor impact is not the same as company impact. Investor impact is the change in a company's
         activities caused by the investor - in other words it is the effect the investor has through its actions or
@@ -98,15 +98,14 @@
         products in our range of offer. Please note that you will also have the possibility to provide more
         information on your values and priorities if you wish to do so.
     </p>
-    <h3>Long Assessment</h3>
+    <h3 class="font-lg my-2"><strong>Long Assessment</strong></h3>
     <p>
         As you have expressed an interest in providing more detail regarding your values and priorities, I can
         provide further explanation in relation to other elements of your potential sustainability motivations.
         Values and priorities
     </p>
-    <p>
-        <strong>Values and priorities leading to promotion of certain sectors and companies</strong>
-    </p>
+    <h3 class="font-lg my-2"><strong>Values and priorities leading to promotion of certain sectors and
+            companies</strong></h3>
     <p>If you want to be more detailed about specific values and priorities you want to advance through your
         investments, the United Nations Sustainable Development Goals (SDGs) can be used to provide more
         precision on the values and priorities you wish to prioritise. The SDGs establish 17 global goals to
@@ -127,9 +126,8 @@
         Using the SDGs allows you to identify the personal values and priorities which are most important to
         you and where you would like to see progress.
     </p>
-    <p>
-        <strong>Values and priorities leading to exclusion of certain sectors and companies</strong>
-    </p>
+    <h3 class="font-lg my-2"><strong>Values and priorities leading to exclusion of certain sectors and
+            companies</strong></h3>
     <p>
         If you want to be more detailed about economic activities you refuse to be financially exposed to, it is
         possible to define negative screening criteria to specify what a financial instrument must avoid investing
@@ -153,5 +151,8 @@
         controversies: nuclear weapons, wars, corruption...
     </p>
 
-    <app-short-survey [disabledInputs]="['B']" (submit)="onShortSurveySubmit($event)"></app-short-survey>
+    <div class="my-4">
+        <app-short-survey [disabledInputs]="['B']" (submit)="onShortSurveySubmit($event)">
+            </app-short-survey>
+    </div>
 </main>
