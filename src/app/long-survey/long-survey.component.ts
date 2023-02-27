@@ -12,53 +12,51 @@ export class LongSurveyComponent {
   @Output() submit: EventEmitter<LongSurveySubmission> = new EventEmitter<LongSurveySubmission>();
 
   q6Options = [
-    'Environment matters',
-    'Clean water and sanitation',
-    'Affordable and clean energy',
-    'Sustainable cities and communities',
-    'Responsible consumption and production',
-    'Climate action',
-    'Water quality and fish stocks',
-    'Nature conservation and biodiversity',
-    'Social & governance matters',
     'No poverty',
     'Zero hunger',
     'Good health and well-being',
     'Quality education',
     'Gender equality',
+    'Clean water and sanitation',
+    'Affordable and clean energy',
     'Decent work and economic growth',
-    'Sustainable industry, infrastructure and innovation',
-    'Reduce inequalities',
+    'Industry, innovation, and infrastructure',
+    'Reduced inequality',
+    'Sustainable cities and communities',
+    'Responsible consumption and production',
+    'Climate action',
+    'Life below water',
+    'Life on land',
     'Peace, justice and strong institutions',
-    'All environment, social & governance matters',
   ];
 
+// FIXME - ADD LINKS OPENING IN NEW TAB TO FINAL THREE
+// THESE SHOULD BE CHECKBOXES
   q7Options = [
-    'Environment exclusions',
     'Pesticides and biocides',
     'Animal testing',
     'Genetic engineering',
     'Palm oil',
     'Coal',
-    'Oil',
+    'Oil and gas',
     'Nuclear energy',
-    'Gas',
     'Fur',
     'Factory farming',
-    'Social and ethics exclusions',
     'Weapons and/or armament',
-    'Tobacco products',
+    'Tobacco/nicotine products',
     'Alcohol',
+    'Cannabis',
     'Gambling',
     'Pornography',
     'Research on human embryos',
-    'Breach of international norms:',
+    'Breach of international norms',
     'Violation of the principles of the UN Global Compact (Human Rights, Labour, Environment, Anti-Corruption)',
-    'Violation of OECD guidelines for multinational enterprises (Responsible business conduct)',
+    'Violation of OECD guidelines for multinational enterprises (responsible business conduct)',
     'Violation of International Labour Organisation rules',
-    'Don\'t refuse financing any sector',
+    'I don\'t refuse financing any sector',
   ];
-
+// FIXME - THESE SHOULD BE CHECKBOXES
+// LINK NOT FREE COUNTRIES
   q8Options = [
     'Nuclear weapons',
     'Non-proliferation treaty of nuclear weapons',
@@ -66,7 +64,8 @@ export class LongSurveyComponent {
     'Corruption',
     'Death sentence',
     'Wars',
-    'Non-ratification of Paris-Agreement',
+    'Non-ratification of the Paris Agreement',
+    'I don\'t refuse financing any sector',
   ];
 
   get q6Form(): FormArray<FormControl<number | null>> {

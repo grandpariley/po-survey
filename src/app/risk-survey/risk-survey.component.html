@@ -1,5 +1,5 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-    <label>When do you expect to need to withdraw cash from your investment portfolio?</label>
+    <label>When do you expect to withdraw cash from your investment portfolio?</label>
     <div>
         <input class="mr-2" type="radio" formControlName="r1" id="r1a" name="r1" value="A">
         <label for="r1a">a) In less than 1 year</label>
@@ -16,9 +16,13 @@
         <input class="mr-2" type="radio" formControlName="r1" id="r1d" name="r1" value="D">
         <label for="r1d">d) Within 5 to 10 years</label>
     </div>
-    <label>If you lost your primary source of income tomorrow, how long could you cover your current living
-        expenses with your present savings and liquid, short-term investments, before you would have to draw on your
-        investment portfolio?</label>
+    <div class="mb-4">
+        <input class="mr-2" type="radio" formControlName="r1" id="r1e" name="r1" value="E">
+        <label for="r1e">e) More than 10 years</label>
+    </div>
+    <label>If your household lost its primary source(s) of income tomorrow, how long could your current living
+        expenses be covered with present savings and liquid, short-term investments before your investment portfolio
+        would have to be drawn from?</label>
     <div>
         <input class="mr-2" type="radio" formControlName="r2" id="r2a" name="r2" value="A">
         <label for="r2a">a) Less than 3 months</label>
@@ -99,23 +103,23 @@
     <label>How would you characterize your personality?</label>
     <div>
         <input class="mr-2" type="radio" formControlName="r6" id="r6a" name="r6" value="A">
-        <label for="r6a">a) I'm a pessimist. I always expect the worst</label>
+        <label for="r6a">a) I'm a pessimist; I always expect the worst</label>
     </div>
     <div>
         <input class="mr-2" type="radio" formControlName="r6" id="r6b" name="r6" value="B">
-        <label for="r6b">b) I'm anxious. No matter what you say, I'll worry</label>
+        <label for="r6b">b) I'm anxious; no matter what you say, I'll worry</label>
     </div>
     <div>
         <input class="mr-2" type="radio" formControlName="r6" id="r6c" name="r6" value="C">
-        <label for="r6c">c) I'm cautious but open to new ideas. Convince me</label>
+        <label for="r6c">c) I'm cautious but open to new ideas; convince me</label>
     </div>
     <div>
         <input class="mr-2" type="radio" formControlName="r6" id="r6d" name="r6" value="D">
-        <label for="r6d">d) I'm objective. Show me the pros and cons and I can make a decision and live with it</label>
+        <label for="r6d">d) I'm objective; show me the pros and cons and I can make a decision and live with it</label>
     </div>
     <div class="mb-4">
         <input class="mr-2" type="radio" formControlName="r6" id="r6e" name="r6" value="E">
-        <label for="r6d">e) I'm optimistic. Things always work out in the end</label>
+        <label for="r6d">e) I'm optimistic; things always work out in the end</label>
     </div>
     <label>When monitoring your investments over time, what do you think you will tend to focus on?</label>
     <div>
@@ -193,8 +197,8 @@
     </div>
     <div>
         <input class="mr-2" type="radio" formControlName="r10" id="r10b" name="r10" value="B">
-        <label for="r10b">b) A rate of inflation that exceeds my rate of return over the long term, because it will erode
-            the purchasing power of my money</label>
+        <label for="r10b">b) A rate of inflation that exceeds my rate of return over the long term, because it will
+            erode the purchasing power of my money</label>
     </div>
     <div>
         <input class="mr-2" type="radio" formControlName="r10" id="r10c" name="r10" value="C">

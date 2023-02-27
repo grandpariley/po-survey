@@ -1,34 +1,34 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="grid grid-cols-1">
-    <label for="q2">How would you express your sustainability motivations and preferences in your owns
+    <label for="q2">How would you express your sustainability motivations and preferences in your own
         words?<span class="text-xs text-gray-600">(optional)</span></label>
     <textarea class="w-full border-2 border-slate-700 rounded p-1 mb-4" id="q2" name="q2"
         formControlName="q2"></textarea><br>
     <label for="q3">What do you want to achieve? (Please select one or several sustainability goals. If you have
-        several sustainability goals, please rank them from 1 to 3, 1 being the most important)<span class="text-xs text-gray-600">(optional)</span></label>
+        several sustainability goals, please rank them from 1 to 3, 1 being the most important)<span
+            class="text-xs text-gray-600">(optional)</span></label>
     <div class="mb-4">
         <app-rank name="q3" id="q3" [form]="q3Form" [options]="q3Options"></app-rank>
     </div>
-    <label>In which type of economic activity would you be willing to invest your money? The investment can focus on
-        one type of economic activity or a mix of them.</label>
+<!-- FIXME REWRITE
     <label>
-        a) Economic activities that contribute substantially to the following environmental objectives:
-        - Climate change mitigation
-        - Climate change adaptation
-        - Sustainable use and protection of water and marine resources
-        - Transition to a circular economy
+        Economic activities that contribute substantially to the following environmental objectives:<br>
+        - Climate change mitigation<br>
+        - Climate change adaptation<br>
+        - Sustainable use and protection of water and marine resources<br>
+        - Transition to a circular economy<br>
         - Pollution prevention and control
-        - Protection and restoration of biodiversity and ecosystems
-        It should represent <input class="p-1 w-24 border-2 border-slate-700 rounded" type="number" name="q4a"
+        - Protection and restoration of biodiversity and ecosystems<br>
+        should represent <input class="p-1 w-24 border-2 border-slate-700 rounded" type="number" name="q4a"
             formControlName="q4a" /> % of the product
     </label>
     <label>
-        b) Economic activities that contribute to environmental objectives (such as efficient use of energy, renewable
-        energy, raw materials, water...) or social objectives (such as tackling inequality or fostering social
-        cohesion, social integration and labour relations...).
-        It should represent <input class="p-1 w-24 border-2 border-slate-700 rounded" type="number" name="q4b"
-            formControlName="q4b" /> % of the product
+        Economic activities that contribute to environmental objectives (such as efficient use of energy, renewable
+        energy, raw materials, water, etc.) or social objectives (such as tackling inequality or fostering social
+        cohesion, social integration and labour relations, etc.) should represent <input
+            class="p-1 w-24 border-2 border-slate-700 rounded" type="number" name="q4b" formControlName="q4b" /> % of
+        the product
     </label>
-    <label for="q4c">c) Economic activities that do not aim at contributing to any environmental or social objective
+    <label for="q4c">Economic activities that do not aim at contributing to any environmental or social objective
         but only consider negative effects on environmental, social and employee matters, respect for human rights,
         anti-corruption, and anti-bribery matters. Indicators on negative effect considered should be linked to the
         following topics (If you select several answers, please provide a ranking, 1 being the most
@@ -36,6 +36,7 @@
     <div class="mb-4">
         <app-rank name="q4c" id="q4c" [form]="q4cForm" [options]="q4cOptions"></app-rank>
     </div>
+-->
     <label>Do you want to provide more detail regarding your values and priorities?</label>
     <div>
         <input class="mr-2" type="radio" formControlName="q5" id="q5a" name="q5" value="A">
