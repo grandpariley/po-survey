@@ -1,15 +1,13 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="grid grid-cols-1">
     <label for="q2">How would you express your sustainability motivations and preferences in your own
-        words?<span class="text-xs text-gray-600">(optional)</span></label>
+        words? <span class="text-xs text-gray-600">(optional)</span></label>
     <textarea class="w-full border-2 border-slate-700 rounded p-1 mb-4" id="q2" name="q2"
         formControlName="q2"></textarea><br>
-    <label for="q3">What do you want to achieve? (Please select one or several sustainability goals. If you have
-        several sustainability goals, please rank them from 1 to 3, 1 being the most important)<span
-            class="text-xs text-gray-600">(optional)</span></label>
+    <label for="q3">What do you want to achieve? <span class="text-xs text-gray-600">(optional)</span></label>
     <div class="mb-4">
-        <app-rank name="q3" id="q3" [form]="q3Form" [options]="q3Options"></app-rank>
+        <app-rank name="q3" id="q3" [options]="q3Options" [form]="q3Form"></app-rank>
     </div>
-<!-- FIXME REWRITE
+    <!-- FIXME REWRITE
     <label>
         Economic activities that contribute substantially to the following environmental objectives:<br>
         - Climate change mitigation<br>
