@@ -9,13 +9,11 @@ export class RankComponent {
   @Input() options: string[] = [];
   @Input() set form(formArray: FormArray<FormControl<number | null>>) {
     this._form = formArray.controls.map((formControl, index) => {
-      // console.log(index, this.options[index], this.options)
       return {
         option: this.options[index],
         formControl: formControl,
       } as RankControl
     });
-    console.log("set")
   };
 
   // ngOnInit() {
@@ -33,7 +31,6 @@ export class RankComponent {
       }
       formArray.push(formControl);
     });
-    console.log("get")
     return formArray
   }
 
@@ -51,41 +48,40 @@ export class RankComponent {
 
   up(rankControl: RankControl): void {
     if (rankControl.formControl.value === 0) {
-      console.log(52)
       return;
     }
     if (rankControl.formControl.value === null) {
-      console.log(56)
-      rankControl.formControl.setValue(this.ranked.length);
+      this.rank(rankControl);
       return;
     }
-    console.log(60)
-    this.ranked.find(rankControl1 => rankControl1.formControl.value === (rankControl.formControl.value != null ? rankControl.formControl.value - 1 : 0))
-      ?.formControl.setValue(rankControl.formControl.value + 1);
-    console.log(63)
-    rankControl.formControl.setValue(rankControl.formControl.value - 1);
+    const current = rankControl.formControl.value as number;
+    const neighbour = this.ranked
+      .find(rankControl1 => rankControl1.formControl.value === current - 1) as RankControl;
+    neighbour.formControl.setValue(current);
+    rankControl.formControl.setValue(current - 1);
+    console.log(64, this._form)
   }
 
   down(rankControl: RankControl): void {
     if (rankControl.formControl.value === null) {
-      console.log(68)
       return;
     }
     if (rankControl.formControl.value === this.ranked.length - 1) {
-      console.log(72)
+      console.log(72, this._form)
       rankControl.formControl.setValue(null);
       return;
     }
-    console.log(76)
-    const current = rankControl.formControl.value;
-    this.ranked.find(rankControl1 => rankControl1.formControl.value === (current != null ? current + 1 : 0))
-      ?.formControl.setValue(current - 1);
-    console.log(79)
+    const current = rankControl.formControl.value as number;
+    const neighbour = this.ranked
+      .find(rankControl1 => rankControl1.formControl.value === current + 1) as RankControl;
+    neighbour.formControl.setValue(current);
     rankControl.formControl.setValue(current + 1);
+    console.log(82, this._form)
   }
 
-  downDisabled(rankControl: RankControl): boolean {
-    return rankControl.formControl.value === null;
+  rank(rankControl: RankControl): void {
+    console.log(86, this._form)
+    rankControl.formControl.setValue(this.ranked.length);
   }
 
   upDisabled(rankControl: RankControl): boolean {
