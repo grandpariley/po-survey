@@ -46,6 +46,7 @@ export class MediumSurveyComponent {
   }
 
   onSubmit(): void {
+    console.log("whuy")
     this.submit.emit({
       q2: this.formGroup.get('q2')?.value,
       q3: this.formGroup.get('q3')?.value,

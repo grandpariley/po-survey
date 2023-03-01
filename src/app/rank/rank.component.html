@@ -3,10 +3,14 @@
     <ng-container *ngFor="let option of ranked; let i = index">
         <div class="flex items-center">
             <div class="flex flex-col justify-center mr-2">
-                <button class="disabled:opacity-50" [disabled]="upDisabled(option)" (click)="up(option)"><i
-                        class="fa fa-chevron-up"></i></button>
-                <button class="disabled:opacity-50" [disabled]="downDisabled(option)" (click)="down(option)"><i
-                        class="fa fa-chevron-down"></i></button>
+                <button type="button" [id]="'up-ranked-' + i" class="disabled:opacity-50"
+                    [disabled]="upDisabled(option)" (click)="up(option)">
+                    <i class="fa fa-chevron-up"></i>
+                </button>
+                <button type="button" [id]="'down-ranked-' + i" class="disabled:opacity-50"
+                    [disabled]="downDisabled(option)" (click)="down(option)">
+                    <i class="fa fa-chevron-down"></i>
+                </button>
             </div>
             <input hidden class="w-24 border-2 border-slate-700 rounded p-1 mr-2 my-1" type="number"
                 [name]="'input-' + i" [id]="'input-' + i" [formControl]="option.formControl">
@@ -17,10 +21,10 @@
     <ng-container *ngFor="let option of unranked; let i = index">
         <div class="flex items-center">
             <div class="flex flex-col justify-center mr-2">
-                <button class="disabled:opacity-50" [disabled]="upDisabled(option)" (click)="up(option)"><i
-                        class="fa fa-chevron-up"></i></button>
-                <button class="disabled:opacity-50" [disabled]="downDisabled(option)" (click)="down(option)"><i
-                        class="fa fa-chevron-down"></i></button>
+                <button type="button" [id]="'up-unranked-' + i" class="disabled:opacity-50"
+                    [disabled]="upDisabled(option)" (click)="up(option)"><i class="fa fa-chevron-up"></i></button>
+                <button type="button" [id]="'down-unranked-' + i" class="disabled:opacity-50"
+                    [disabled]="downDisabled(option)" (click)="down(option)"><i class="fa fa-chevron-down"></i></button>
             </div>
             <input hidden class="w-24 border-2 border-slate-700 rounded p-1 mr-2 my-1" type="number"
                 [name]="'input-' + i" [id]="'input-' + i" [formControl]="option.formControl">
