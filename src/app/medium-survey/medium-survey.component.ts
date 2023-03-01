@@ -30,8 +30,8 @@ export class MediumSurveyComponent {
   formGroup = new FormGroup({
     q2: new FormControl<string | null>(null),
     q3: new FormArray<FormControl<number | null>>(this.q3Options.map(_ => new FormControl(null))),
-    q4a: new FormControl<number | null>(null, Validators.required),
-    q4b: new FormControl<number | null>(null, Validators.required),
+    q4a: new FormControl<number | null>(null),
+    q4b: new FormControl<number | null>(null),
     q4c: new FormArray<FormControl<number | null>>(this.q4cOptions.map(_ => new FormControl(null))),
     q5: new FormControl<'A' | 'B' | null>(null, Validators.required),
   });
@@ -45,7 +45,6 @@ export class MediumSurveyComponent {
   }
 
   onSubmit(): void {
-    console.log("whuy")
     this.submit.emit({
       q2: this.formGroup.get('q2')?.value,
       q3: this.formGroup.get('q3')?.value,

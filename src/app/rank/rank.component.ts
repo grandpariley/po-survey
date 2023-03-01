@@ -16,12 +16,6 @@ export class RankComponent {
     });
   };
 
-  // ngOnInit() {
-  //   console.log(this.options)
-  //   console.log(this._form)
-  //   console.log(this.form)
-  // }
-
   get form(): FormArray<FormControl<number | null>> {
     const formArray = new FormArray<FormControl<number | null>>([]);
     this.options.forEach(option => {
@@ -59,7 +53,6 @@ export class RankComponent {
       .find(rankControl1 => rankControl1.formControl.value === current - 1) as RankControl;
     neighbour.formControl.setValue(current);
     rankControl.formControl.setValue(current - 1);
-    console.log(64, this._form)
   }
 
   down(rankControl: RankControl): void {
@@ -67,7 +60,6 @@ export class RankComponent {
       return;
     }
     if (rankControl.formControl.value === this.ranked.length - 1) {
-      console.log(72, this._form)
       rankControl.formControl.setValue(null);
       return;
     }
@@ -76,11 +68,9 @@ export class RankComponent {
       .find(rankControl1 => rankControl1.formControl.value === current + 1) as RankControl;
     neighbour.formControl.setValue(current);
     rankControl.formControl.setValue(current + 1);
-    console.log(82, this._form)
   }
 
   rank(rankControl: RankControl): void {
-    console.log(86, this._form)
     rankControl.formControl.setValue(this.ranked.length);
   }
 
