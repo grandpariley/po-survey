@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { LongSurveySubmission, Rank } from '../model/model';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { LongSurveySubmission } from '../model/model';
 
 @Component({
   selector: 'app-long-survey',
@@ -29,8 +29,6 @@ export class LongSurveyComponent {
     'Peace, justice and strong institutions',
   ];
 
-// FIXME - ADD LINKS OPENING IN NEW TAB TO FINAL THREE
-// THESE SHOULD BE CHECKBOXES
   q7Options = [
     'Pesticides and biocides',
     'Animal testing',
@@ -49,17 +47,16 @@ export class LongSurveyComponent {
     'Pornography',
     'Research on human embryos',
     'Breach of international norms',
-    'Violation of the principles of the UN Global Compact (Human Rights, Labour, Environment, Anti-Corruption)',
-    'Violation of OECD guidelines for multinational enterprises (responsible business conduct)',
-    'Violation of International Labour Organisation rules',
+    'Violation of the principles of the <a class="underline text-blue-600" target="_blank" rel="noopener noreferrer" href="https://unglobalcompact.org/what-is-gc/mission/principles">UN Global Compact</a>',
+    'Violation of <a class="underline text-blue-600" target="_blank" rel="noopener noreferrer" href="https://mneguidelines.oecd.org/mneguidelines/">OECD guidelines for multinational enterprises</a>',
+    'Violation of <a class="underline text-blue-600" target="_blank" rel="noopener noreferrer" href="https://www.ilo.org/global/standards/introduction-to-international-labour-standards/lang--en/index.htm">International Labour Organisation rules</a>',
     'I don\'t refuse financing any sector',
   ];
-// FIXME - THESE SHOULD BE CHECKBOXES
-// LINK NOT FREE COUNTRIES
+
   q8Options = [
     'Nuclear weapons',
     'Non-proliferation treaty of nuclear weapons',
-    'Countries classified as not free',
+    'Countries classified as <a class="underline text-blue-600" target="_blank" rel="noopener noreferrer" href="https://freedomhouse.org/explore-the-map?type=fiw">not free</a>',
     'Corruption',
     'Death sentence',
     'Wars',

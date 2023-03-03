@@ -13,7 +13,7 @@
             </div>
             <input hidden class="w-24 border-2 border-slate-700 rounded p-1 mr-2 my-1" type="number"
                 [name]="'input-' + i" [id]="'input-' + i" [formControl]="option.formControl">
-            <label [for]="'input-' + i">{{option.option}}</label>
+            <label [for]="'input-' + i" [innerHTML]="option.option"></label>
         </div>
     </ng-container>
     <hr>
@@ -31,7 +31,7 @@
             </div>
             <input hidden class="w-24 border-2 border-slate-700 rounded p-1 mr-2 my-1" type="number"
                 [name]="'input-' + i" [id]="'input-' + i" [formControl]="option.formControl">
-            <label [for]="'input-' + i">{{option.option}}</label>
+            <label [for]="'input-' + i" [innerHTML]="option.option"></label>
         </div>
     </ng-container>
 </div>

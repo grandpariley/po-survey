@@ -19,7 +19,7 @@ import { SurveyService } from '../survey.service';
   </div>`,
 })
 export class SurveyContainerComponent implements OnInit {
-  state: FormControl<SurveyState> = new FormControl<SurveyState>('MEDIUM', Validators.required);
+  state: FormControl<SurveyState> = new FormControl<SurveyState>('LONG', Validators.required);
 
   constructor(private surveyService: SurveyService, private router: Router) { }
 

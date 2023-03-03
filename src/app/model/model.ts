@@ -29,7 +29,7 @@ export interface MediumSurveySubmission {
     q3: Rank | null | undefined;
     q4a: number | null | undefined;
     q4b: number | null | undefined;
-    q4c: Rank | null | undefined;
+    q4c: number | null | undefined;
     q5: MultipleChoice | null | undefined;
 }
 

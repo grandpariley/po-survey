@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormArray, FormControl } from '@angular/forms';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-rank',
@@ -10,7 +11,7 @@ export class RankComponent {
   @Input() set form(formArray: FormArray<FormControl<number | null>>) {
     this._form = formArray.controls.map((formControl, index) => {
       return {
-        option: this.options[index],
+        option: this.sanitizer.bypassSecurityTrustHtml(this.options[index]),
         formControl: formControl,
       } as RankControl
     });
@@ -39,6 +40,8 @@ export class RankComponent {
   get unranked(): RankControl[] {
     return this._form.filter(rankControl => rankControl.formControl.value === null);
   }
+
+  constructor(private sanitizer: DomSanitizer) { }
 
   up(rankControl: RankControl): void {
     if (rankControl.formControl.value === 0) {
@@ -80,6 +83,6 @@ export class RankComponent {
 }
 
 export interface RankControl {
-  option: string;
+  option: SafeHtml;
   formControl: FormControl<number | null>
 }
