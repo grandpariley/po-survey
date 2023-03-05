@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { SurveyContainerComponent } from './survey-container/survey-container.component';
 import { ThanksContainerComponent } from './thanks-container/thanks-container.component';
 import { ShortSurveyComponent } from './short-survey/short-survey.component';
-import { MediumSurveyComponent } from './medium-survey/medium-survey.component';
 import { LongSurveyComponent } from './long-survey/long-survey.component';
 import { RankComponent } from './rank/rank.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -20,7 +19,6 @@ import { RiskSurveyComponent } from './risk-survey/risk-survey.component';
     SurveyContainerComponent,
     ThanksContainerComponent,
     ShortSurveyComponent,
-    MediumSurveyComponent,
     LongSurveyComponent,
     RankComponent,
     InfoComponent,

@@ -1,30 +1,81 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-    <label for="q6">
-        Which of the UN Sustainable Development Goals below do you want to further with your investments, if any?
-        <span class="text-xs text-gray-600">(optional)</span>
-    </label>
+    <label for="q2">How would you express your sustainability motivations and preferences in your own
+        words? <span class="text-xs text-gray-600">(optional)</span></label>
+    <textarea class="w-full border-2 border-slate-700 rounded p-1 mb-4" id="q2" name="q2"
+        formControlName="q2"></textarea><br>
+    <label for="q3">What do you want to achieve? <span class="text-xs text-gray-600">(optional)</span></label>
     <div class="mb-4">
-        <app-rank name="q6" id="q6" [options]="q6Options" [form]="q6Form"></app-rank>
+        <app-rank name="q3" id="q3" [options]="q3Options" [form]="q3Form"></app-rank>
     </div>
-    <label for="q7">
-        Which of the following economic activities do you refuse to invest in, if any?
-        <span class="text-xs text-gray-600">(optional)</span>
-    </label>
+    <label class="mb-4">
+        Economic activities that contribute to environmental objectives such as:<br>
+        - Climate change mitigation<br>
+        - Climate change adaptation<br>
+        - Sustainable use and protection of water and marine resources<br>
+        - Transition to a circular economy<br>
+        - Pollution prevention and control
+        - Protection and restoration of biodiversity and ecosystems<br>
+        should represent <input class="p-1 w-24 border-2 border-slate-700 rounded" type="number" name="q4a"
+            formControlName="q4a" /> % of the product <span class="text-xs text-gray-600">(optional)</span>
+    </label><br>
+    <label class="mb-4">
+        Economic activities that contribute to social objectives such as:<br>
+        - tackling inequality<br>
+        - fostering social cohesion<br>
+        - social integration<br>
+        - labour relations<br>
+        should represent <input class="p-1 w-24 border-2 border-slate-700 rounded" type="number" name="q4b"
+            formControlName="q4b" /> % of the product <span class="text-xs text-gray-600">(optional)</span>
+    </label><br>
+    <label class="mb-4">
+        Economic activities that contribute to governance objectives such as:<br>
+        - shareholder rights<br>
+        - transparency<br>
+        - accountability<br>
+        - corporate board composition and structure<br>
+        - corruption<br>
+        should represent <input class="p-1 w-24 border-2 border-slate-700 rounded" type="number" name="q4c"
+            formControlName="q4c" /> % of the product <span class="text-xs text-gray-600">(optional)</span>
+    </label><br>
+    <label>Do you want to provide more detail regarding your values and priorities?</label>
+    <div>
+        <input class="mr-2" type="radio" formControlName="q5" id="q5a" name="q5" value="A">
+        <label for="q5a">a) Yes</label>
+    </div>
     <div class="mb-4">
-        <app-rank name="q7" id="q7" [options]="q7Options" [form]="q7Form"></app-rank>
+        <input class="mr-2" type="radio" formControlName="q5" id="q5b" name="q5" value="B">
+        <label for="q5b">b) No</label>
     </div>
-    <label for="q8">
-        Which of the following national activities do you refuse to invest in with respect to the country of origin of a
-        portfolio option, if any?
-        <span class="text-xs text-gray-600">(optional)</span>
-    </label>
-    <div class="mb-4">
-        <app-rank name="q8" id="q8" [options]="q8Options" [form]="q8Form"></app-rank>
-    </div>
-    <label for="q9">Are there any additional values and priorities you would like to express?
-        <span class="text-xs text-gray-600">(optional)</span></label>
-    <textarea class="w-full border-2 border-slate-700 rounded p-1" id="q9" name="q9"
-        formControlName="q9"></textarea><br>
+    <ng-container *ngIf="moreDetail">
+        <hr class="my-4">
+        <label for="q6">
+            Which of the UN Sustainable Development Goals below do you want to further with your investments, if any?
+            <span class="text-xs text-gray-600">(optional)</span>
+        </label>
+        <div class="mb-4">
+            <app-rank name="q6" id="q6" [options]="q6Options" [form]="q6Form"></app-rank>
+        </div>
+        <label for="q7">
+            Which of the following economic activities do you refuse to invest in, if any?
+            <span class="text-xs text-gray-600">(optional)</span>
+        </label>
+        <div class="mb-4">
+            <app-rank name="q7" id="q7" [options]="q7Options" [form]="q7Form"></app-rank>
+        </div>
+        <label for="q8">
+            Which of the following national activities do you refuse to invest in with respect to the country of origin
+            of a
+            portfolio option, if any?
+            <span class="text-xs text-gray-600">(optional)</span>
+        </label>
+        <div class="mb-4">
+            <app-rank name="q8" id="q8" [options]="q8Options" [form]="q8Form"></app-rank>
+        </div>
+        <label for="q9">Are there any additional values and priorities you would like to express?
+            <span class="text-xs text-gray-600">(optional)</span></label>
+        <textarea class="w-full border-2 border-slate-700 rounded p-1" id="q9" name="q9"
+            formControlName="q9"></textarea><br>
+    </ng-container>
     <div>
         <button id="submit" class="my-4 border-2 border-slate-700 rounded p-3 disabled:opacity-50"
             [disabled]="!formGroup.valid" type="submit">Submit</button>

@@ -1,9 +1,8 @@
-export type SurveyState = 'INFO' | 'RISK' | 'SHORT' | 'MEDIUM' | 'LONG' | 'COMPLETE' | null;
+export type SurveyState = 'INFO' | 'RISK' | 'SHORT' | 'LONG' | 'COMPLETE' | null;
 
 export interface SurveySubmission {
     risk: RiskSurveySubmission | null;
     short: ShortSurveySubmission | null;
-    medium: MediumSurveySubmission | null;
     long: LongSurveySubmission | null;
 }
 
@@ -24,16 +23,13 @@ export interface ShortSurveySubmission {
     q1: MultipleChoice | null | undefined;
 }
 
-export interface MediumSurveySubmission {
+export interface LongSurveySubmission {
     q2: string | null | undefined;
     q3: Rank | null | undefined;
     q4a: number | null | undefined;
     q4b: number | null | undefined;
     q4c: number | null | undefined;
     q5: MultipleChoice | null | undefined;
-}
-
-export interface LongSurveySubmission {
     q6: Rank | null | undefined;
     q7: Rank | null | undefined;
     q8: Rank | null | undefined;

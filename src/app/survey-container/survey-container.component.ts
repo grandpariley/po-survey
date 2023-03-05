@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LongSurveySubmission, MediumSurveySubmission, RiskSurveySubmission, ShortSurveySubmission, SurveyState } from '../model/model';
+import { LongSurveySubmission, RiskSurveySubmission, ShortSurveySubmission, SurveyState } from '../model/model';
 import { SurveyService } from '../survey.service';
 
 @Component({
@@ -13,7 +13,6 @@ import { SurveyService } from '../survey.service';
       <app-risk-survey *ngIf="state.value === 'RISK'" (submit)="onRiskSurveySubmit($event)"></app-risk-survey>
       <app-short-survey *ngIf="state.value === 'SHORT'" (submit)="onShortSurveySubmit($event)" [disabledInputs]="[]"></app-short-survey>
       <app-info *ngIf="state.value === 'INFO'" (back)="onInfoBack($event)"></app-info>
-      <app-medium-survey *ngIf="state.value === 'MEDIUM'" (submit)="onMediumSurveySubmit($event)"></app-medium-survey>
       <app-long-survey *ngIf="state.value === 'LONG'" (submit)="onLongSurveySubmit($event)"></app-long-survey>
     </main>
   </div>`,
@@ -33,22 +32,22 @@ export class SurveyContainerComponent implements OnInit {
   }
 
   onInfoBack($event: ShortSurveySubmission) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.state.setValue(this.surveyService.completeShortSurvey($event));
   }
 
   onRiskSurveySubmit($event: RiskSurveySubmission): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.state.setValue(this.surveyService.completeRiskSurvey($event));
   }
 
   onShortSurveySubmit($event: ShortSurveySubmission): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.state.setValue(this.surveyService.completeShortSurvey($event));
   }
 
-  onMediumSurveySubmit($event: MediumSurveySubmission): void {
-    this.state.setValue(this.surveyService.completeMediumSurvey($event));
-  }
-
   onLongSurveySubmit($event: LongSurveySubmission): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.state.setValue(this.surveyService.completeLongSurvey($event));
   }
 
