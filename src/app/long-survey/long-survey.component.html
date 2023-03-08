@@ -47,25 +47,24 @@
         <label for="q5b">b) No</label>
     </div>
     <ng-container *ngIf="moreDetail">
-        <hr class="my-4">
+        <hr class="my-4 border-slate-900">
         <label for="q6">
-            Which of the UN Sustainable Development Goals below do you want to further with your investments, if any?
+            Rank the following UN Sustainable Development Goals that you want to further with your investments, if any.
             <span class="text-xs text-gray-600">(optional)</span>
         </label>
         <div class="mb-4">
             <app-rank name="q6" id="q6" [options]="q6Options" [form]="q6Form"></app-rank>
         </div>
         <label for="q7">
-            Which of the following economic activities do you refuse to invest in, if any?
+            Rank the following economic activities that you refuse to invest in, if any.
             <span class="text-xs text-gray-600">(optional)</span>
         </label>
         <div class="mb-4">
             <app-rank name="q7" id="q7" [options]="q7Options" [form]="q7Form"></app-rank>
         </div>
         <label for="q8">
-            Which of the following national activities do you refuse to invest in with respect to the country of origin
-            of a
-            portfolio option, if any?
+            Rank the following national activities that you refuse to invest in with respect to the country of origin
+            of a portfolio option, if any.
             <span class="text-xs text-gray-600">(optional)</span>
         </label>
         <div class="mb-4">
