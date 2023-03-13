@@ -8,7 +8,8 @@ import { SurveyService } from '../survey.service';
   selector: 'app-survey-container',
   template: `
   <div class="grid grid-cols-1 px-6 py-4">
-    <h1 class="text-xl font-medium mb-4">ESG-Conscious Portfolio Survey</h1>
+    <h1 class="text-xl font-medium">ESG-Conscious Portfolio Survey</h1>
+    <p class="text-xs text-gray-600 mb-4">Please note that you can close your browser at any time to withdraw consent. No information will be collected until the final submission.</p>
     <main class="grid grid-cols-1">
       <app-risk-survey *ngIf="state.value === 'RISK'" (submit)="onRiskSurveySubmit($event)"></app-risk-survey>
       <app-short-survey *ngIf="state.value === 'SHORT'" (submit)="onShortSurveySubmit($event)" [disabledInputs]="[]"></app-short-survey>
