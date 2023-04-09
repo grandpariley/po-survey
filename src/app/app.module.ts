@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { InfoComponent } from './info/info.component';
 import { RiskSurveyComponent } from './risk-survey/risk-survey.component';
+import { CompleteComponent } from './complete/complete.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RiskSurveyComponent } from './risk-survey/risk-survey.component';
     LongSurveyComponent,
     RankComponent,
     InfoComponent,
-    RiskSurveyComponent
+    RiskSurveyComponent,
+    CompleteComponent
   ],
   imports: [
     BrowserModule,

@@ -8,14 +8,18 @@ const URI = 'https://faas-tor1-70ca848e.doserverless.co/api/v1/web/fn-e3f092c8-2
   providedIn: 'root'
 })
 export class SurveyService {
-
+  
   state: SurveySubmission = {
     risk: null,
     short: null,
     long: null,
   };
-
+  
   constructor(private http: HttpClient) { }
+  
+  completeSurvey(): SurveyState {
+    return 'SUBMIT';
+  }
 
   completeRiskSurvey(riskSurveySubmission: RiskSurveySubmission): SurveyState {
     this.state.risk = riskSurveySubmission;

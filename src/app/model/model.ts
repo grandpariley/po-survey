@@ -1,4 +1,4 @@
-export type SurveyState = 'INFO' | 'RISK' | 'SHORT' | 'LONG' | 'COMPLETE' | null;
+export type SurveyState = 'INFO' | 'RISK' | 'SHORT' | 'LONG' | 'COMPLETE' | 'SUBMIT' | null;
 
 export interface SurveySubmission {
     risk: RiskSurveySubmission | null;

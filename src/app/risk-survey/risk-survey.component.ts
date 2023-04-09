@@ -11,16 +11,16 @@ export class RiskSurveyComponent {
   @Output() submit: EventEmitter<RiskSurveySubmission> = new EventEmitter<RiskSurveySubmission>();
 
   formGroup = new FormGroup({
-    r1: new FormControl<MultipleChoice | undefined | null>(null, Validators.required),
-    r2: new FormControl<MultipleChoice | undefined | null>(null, Validators.required),
-    r3: new FormControl<MultipleChoice | undefined | null>(null, Validators.required),
-    r4: new FormControl<MultipleChoice | undefined | null>(null, Validators.required),
-    r5: new FormControl<MultipleChoice | undefined | null>(null, Validators.required),
-    r6: new FormControl<MultipleChoice | undefined | null>(null, Validators.required),
-    r7: new FormControl<MultipleChoice | undefined | null>(null, Validators.required),
-    r8: new FormControl<MultipleChoice | undefined | null>(null, Validators.required),
-    r9: new FormControl<MultipleChoice | undefined | null>(null, Validators.required),
-    r10: new FormControl<MultipleChoice | undefined | null>(null, Validators.required),
+    r1: new FormControl<MultipleChoice | undefined | null>(null),
+    r2: new FormControl<MultipleChoice | undefined | null>(null),
+    r3: new FormControl<MultipleChoice | undefined | null>(null),
+    r4: new FormControl<MultipleChoice | undefined | null>(null),
+    r5: new FormControl<MultipleChoice | undefined | null>(null),
+    r6: new FormControl<MultipleChoice | undefined | null>(null),
+    r7: new FormControl<MultipleChoice | undefined | null>(null),
+    r8: new FormControl<MultipleChoice | undefined | null>(null),
+    r9: new FormControl<MultipleChoice | undefined | null>(null),
+    r10: new FormControl<MultipleChoice | undefined | null>(null),
   });
 
   onSubmit(): void {
