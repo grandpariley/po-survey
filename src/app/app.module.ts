@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { InfoComponent } from './info/info.component';
 import { RiskSurveyComponent } from './risk-survey/risk-survey.component';
 import { CompleteComponent } from './complete/complete.component';
+import { ConsentComponent } from './consent/consent.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CompleteComponent } from './complete/complete.component';
     RankComponent,
     InfoComponent,
     RiskSurveyComponent,
-    CompleteComponent
+    CompleteComponent,
+    ConsentComponent
   ],
   imports: [
     BrowserModule,

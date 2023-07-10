@@ -21,6 +21,10 @@ export class SurveyService {
     return 'SUBMIT';
   }
 
+  consentToSurvey(): SurveyState {
+    return 'RISK';
+  }
+
   completeRiskSurvey(riskSurveySubmission: RiskSurveySubmission): SurveyState {
     this.state.risk = riskSurveySubmission;
     return 'SHORT';

@@ -1,4 +1,4 @@
-export type SurveyState = 'INFO' | 'RISK' | 'SHORT' | 'LONG' | 'COMPLETE' | 'SUBMIT' | null;
+export type SurveyState = 'CONSENT' | 'INFO' | 'RISK' | 'SHORT' | 'LONG' | 'COMPLETE' | 'SUBMIT' | null;
 
 export interface SurveySubmission {
     risk: RiskSurveySubmission | null;
@@ -8,12 +8,12 @@ export interface SurveySubmission {
 
 export interface RiskSurveySubmission {
     r1: MultipleChoice | null | undefined;
-    r2: MultipleChoice| null | undefined;
+    r2: MultipleChoice | null | undefined;
     r3: MultipleChoice | null | undefined;
     r4: MultipleChoice | null | undefined;
-    r5: MultipleChoice| null | undefined;
+    r5: MultipleChoice | null | undefined;
     r6: MultipleChoice | null | undefined;
-    r7: MultipleChoice| null | undefined;
+    r7: MultipleChoice | null | undefined;
     r8: MultipleChoice | null | undefined;
     r9: MultipleChoice | null | undefined;
     r10: MultipleChoice | null | undefined;

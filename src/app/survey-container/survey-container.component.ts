@@ -7,13 +7,21 @@ import { SurveyService } from '../survey.service';
 @Component({
   selector: 'app-survey-container',
   template: `
-  <div class="grid grid-cols-1 px-6 py-4">
-    <h1 class="text-xl font-medium">ESG-Conscious Portfolio Survey</h1>
-    <div class="text-xs text-gray-600 mb-4">
-      <p>Please note that you can close your browser at any time to withdraw consent. No information will be collected until the final submission.</p>
-      <p>Please note that by submitting the survey you will be providing implied consent. Please review the <a class="underline text-blue-600" href="/assets/ESG-Conscious-Portfolio-Survey-Consent-Form.pdf" target="_blank">consent form</a> prior to submission.</p>
+  <div class="grid grid-cols-8 px-6 py-4">
+    <div class="col-span-1">
+      <img width="100%" height="100%" src="/assets/uofrlogo.jpeg" alt="University of Regina Logo" />
     </div>
-    <main class="grid grid-cols-1">
+    <div class="col-span-7 flex items-center">
+      <div>
+        <h1 class="text-xl font-medium">Environmental, Social, and Governance Conscious Portfolio Survey</h1>
+        <div class="text-xs text-gray-600 mb-4">
+          <p>Please note that you can close your browser at any time to withdraw consent. No information will be collected until the final submission.</p>
+          <p>Please note that by submitting the survey you will be providing implied consent. Please review the <a class="underline text-blue-600" href="/assets/ESG-Conscious-Portfolio-Survey-Consent-Form.pdf" target="_blank">consent form</a> prior to submission.</p>
+        </div>
+      </div>
+    </div>
+    <main class="grid grid-cols-1 col-span-8">
+      <app-consent *ngIf="state.value === 'CONSENT'" (submit)="onConsentSubmit()"></app-consent>
       <app-risk-survey *ngIf="state.value === 'RISK'" (submit)="onRiskSurveySubmit($event)"></app-risk-survey>
       <app-short-survey *ngIf="state.value === 'SHORT'" (submit)="onShortSurveySubmit($event)" [disabledInputs]="[]"></app-short-survey>
       <app-info *ngIf="state.value === 'INFO'" (back)="onInfoBack($event)"></app-info>
@@ -23,7 +31,7 @@ import { SurveyService } from '../survey.service';
   </div>`,
 })
 export class SurveyContainerComponent implements OnInit {
-  state: FormControl<SurveyState> = new FormControl<SurveyState>('RISK', Validators.required);
+  state: FormControl<SurveyState> = new FormControl<SurveyState>('CONSENT', Validators.required);
 
   constructor(private surveyService: SurveyService, private router: Router) { }
 
@@ -59,6 +67,11 @@ export class SurveyContainerComponent implements OnInit {
   onCompleteSubmit(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     this.state.setValue(this.surveyService.completeSurvey());
+  }
+
+  onConsentSubmit(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.state.setValue(this.surveyService.consentToSurvey());
   }
 
 }

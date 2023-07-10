@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()">
+    <p>If you consent to the usage of your responses as outlined in the <a class="underline text-blue-600"
+            href="/assets/ESG-Conscious-Portfolio-Survey-Consent-Form.pdf" target="_blank">consent form</a>, please
+        click the Next button to continue</p>
+    <p>Otherwise, you may close your browser.</p>
+    <object data="/assets/ESG-Conscious-Portfolio-Survey-Consent-Form.pdf" type="application/pdf" width="1000px" height="1000px">
+        <p>Unable to display PDF file. <a href="/assets/ESG-Conscious-Portfolio-Survey-Consent-Form.pdf">Download</a> instead.</p>
+      </object>
+    <button id="submit" class="my-3 border-2 border-slate-700 rounded p-3 disabled:opacity-50"
+        type="submit">Next</button>
+</form>
