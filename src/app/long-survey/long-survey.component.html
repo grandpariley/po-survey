@@ -1,4 +1,5 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <h3 class="font-lg font-semibold">Medium Survey</h3>
     <label for="q2">How would you express your sustainability motivations and preferences in your own
         words? <span class="text-xs text-gray-600">(optional)</span></label>
     <textarea class="w-full border-2 border-slate-700 rounded p-1 mb-4" id="q2" name="q2"
@@ -48,6 +49,7 @@
     </div>
     <ng-container *ngIf="moreDetail">
         <hr class="my-4 border-slate-900">
+        <h3 class="font-lg font-semibold">Long Survey</h3>
         <label for="q6">
             Rank the following UN Sustainable Development Goals that you want to further with your investments, if any.
             <span class="text-xs text-gray-600">(optional)</span>
